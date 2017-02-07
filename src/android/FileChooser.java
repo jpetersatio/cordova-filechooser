@@ -11,6 +11,8 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONException;
 
+import com.ipaulpro.afilechooser.utils.FileUtils;
+
 public class FileChooser extends CordovaPlugin {
 
     private static final String TAG = "FileChooser";
@@ -58,9 +60,9 @@ public class FileChooser extends CordovaPlugin {
 
                 if (uri != null) {
                     
-                    //String path = "";//FileUtils.getPath(this, uri);
+                    String path = FileUtils.getPath(this, uri);
                     //Log.w(TAG, uri.toString());
-                    callback.success(uri.toString(),"");
+                    callback.success(uri.toString(),path);
 
                 } else {
 
